@@ -67,7 +67,7 @@ describe("About Functions", function() {
       return secondArg;
     }
 
-    expect(returnSecondArg("only give first arg")).toBe("second", "only give first arg");
+    expect(returnSecondArg("only give first arg")).toBe(undefined);
 
     function returnAllArgs() {
       var argsArray = [];
@@ -77,7 +77,7 @@ describe("About Functions", function() {
       return argsArray.join(",");
     }
 
-    expect(returnAllArgs("first", "second", "third")).toBe("first", "second", "third", "only give first arg");
+    expect(returnAllArgs("first", "second", "third")).toBe("first,second,third");
   });
 
   it("should pass functions as values", function () {
